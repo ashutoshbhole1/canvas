@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New canvas </title>
+</head>
+
+<body style="background-color: #4500ad;">
+    <!-- <canvas id="canvas" style="background-color: #9751ff;" width="600" height="600"> -->
+    <canvas id="canvas" width="600" height="600">
+    </canvas>
+
+
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+
+        // ctx.beginPath();
+        // ctx.rect(50, 50, 500, 500);
+        // ctx.fillStyle = "#fff";
+        // ctx.fill();
+
+        // ctx.beginPath();
+        // ctx.rect(100, 100, 400, 400);
+        // ctx.fillStyle = "#aaa"
+        // ctx.fill();
+
+        // ctx.beginPath();
+        // ctx.rect(150, 150, 300, 300);
+        // ctx.fillStyle = "#fff"
+        // ctx.fill();
+
+
+        // ctx.beginPath();
+        // ctx.rect(200, 200, 200, 200);
+        // ctx.fillStyle = "#aaa"
+        // ctx.fill();
+        // // ctx.stroke();
+
+
+        // //BY MATHS
+
+        // let thickness = 50;
+        // let x = 0, y = 0, h = 500, w = 500;
+
+        // ctx.beginPath();
+        // ctx.rect(x, y, h, w);
+        // ctx.fillStyle = "#fff";
+        // ctx.fill();
+        // x = x+thickness;
+        // y = y+thickness;
+        // h = h-thickness*2;
+        // w = w-thickness*2;
+
+
+        // ctx.beginPath();
+        // ctx.rect(x, y, h, w);
+        // ctx.fillStyle = "#aaa";
+        // ctx.fill();
+        // x = x+thickness;
+        // y = y+thickness;
+        // h = h-thickness*2;
+        // w = w-thickness*2;
+
+
+        // ctx.beginPath();
+        // ctx.rect(x, y, h, w);
+        // ctx.fillStyle = "#fff";
+        // ctx.fill();
+        // x = x+thickness;
+        // y = y+thickness;
+        // h = h-thickness*2;
+        // w = w-thickness*2;
+
+
+        // ctx.beginPath();
+        // ctx.rect(x, y, h, w);
+        // ctx.fillStyle = "#aaa";
+        // ctx.fill();
+        // x = x+thickness;
+        // y = y+thickness;
+        // h = h-thickness*2;
+        // w = w-thickness*2;
+
+
+        //  By while Loop
+
+        let thickness = 30;
+        let x = 0, y = 0, h = 500, w = 500;
+        let i = 1;
+
+        while (i <= 9) {
+
+            ctx.beginPath();
+            ctx.rect(x, y, h, w);
+            if (i % 2 == 1) {
+                ctx.fillStyle = "#fff";
+            }
+            else {
+                ctx.fillStyle = "#adad";
+            }
+            ctx.fill();
+            x = x + thickness;
+            y = y + thickness;
+            h = h - thickness * 2;
+            w = w - thickness * 2;
+
+            i += 1;
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>

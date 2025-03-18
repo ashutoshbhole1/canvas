@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas - Mouse Interaction</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background: linear-gradient(#000, #121212);
+        }
+
+        .hero {
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        .hero iframe {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- SMALL ROBOT SPLINE -->
+    <div class="hero">
+        <iframe src='https://my.spline.design/robotfollowcursorforlandingpagemc-89b8c3e5803bd5b580ea94bbdd0158ed/'
+            frameborder='0' width='100%' height='100%'></iframe>
+    </div>
+
+    <div class="hero">
+        <!-- ROBOT SPLINE -->
+        <!-- <spline-viewer url="https://prod.spline.design/PJC-ps4pY2g5kAUh/scene.splinecode"></spline-viewer> -->
+        <iframe src='https://my.spline.design/nexbotrobotcharacterconcept-9112f8f68af74338f1dbad23a1a2ca0a/'
+            frameborder='0' width='100%' height='100%'></iframe>
+    </div>=
+
+
+    <!-- EARTH SPLINE -->
+    <!-- <iframe src='https://my.spline.design/earthdayandnight-ee6021b328285e3556031c080b96f765/' frameborder='0' width='100%' height='100%'></iframe> -->
+
+    <!-- <canvas id="canvas" width="600" height="600" style="border: 5px solid #6260ff;"></canvas> -->
+
+    <script>
+        function canvas() {
+            const canvas = document.getElementById("canvas");
+            const ctx = canvas.getContext("2d");
+
+            const minRad = 20;
+            const rangeRad = 30;
+            let p = 0;
+
+            let x = 300;
+            let y = 300;
+
+            animate();
+
+            function animate() {
+                p = p + 0.02;
+                if (p > 1) {
+                    p = 0;
+                }
+
+                const rad = minRad + rangeRad * p;
+
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath();
+                ctx.arc(x, y, rad, 0, Math.PI * 2);
+                ctx.stroke();
+
+                requestAnimationFrame(animate);
+            }
+
+            canvas.addEventListener("mousemove", function (e) {
+                x = e.offsetX;
+                y = e.offsetY;
+            });
+
+        }
+
+        canvas();
+    </script>
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.79/build/spline-viewer.js"></script>
+</body>
+
+</html>
